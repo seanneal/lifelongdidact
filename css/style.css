@@ -1,0 +1,237 @@
+/* ============================================
+   lifelongdidact.com — style.css
+   Techno-minimalist / CRT hacker aesthetic
+   ============================================ */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0e14;
+  color: #c0e8c0;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.7;
+  min-height: 100vh;
+  -webkit-font-smoothing: none;
+}
+
+/* --- Layout --- */
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* --- Header --- */
+.site-header {
+  border-bottom: 1px solid #1a3a2a;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.site-title {
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #00ff88;
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+}
+
+.site-tagline {
+  font-size: 0.9rem;
+  color: #7a9a8a;
+  margin-top: 0.25rem;
+}
+
+/* --- Navigation --- */
+nav {
+  margin-bottom: 2.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #c0e8c0;
+  text-decoration: none;
+  padding: 0.15rem 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  color: #00ff88;
+  border-bottom-color: #00ff88;
+}
+
+nav a.active {
+  color: #f0c040;
+  border-bottom-color: #f0c040;
+}
+
+/* --- Headings --- */
+h1, h2, h3 {
+  font-weight: normal;
+  letter-spacing: 0.03em;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 2rem 0 1rem;
+  text-transform: uppercase;
+  color: #f0c040;
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 1.5rem 0 0.75rem;
+  color: #00ff88;
+}
+
+/* --- Links --- */
+a {
+  color: #00ff88;
+}
+
+a:hover {
+  color: #f0c040;
+}
+
+/* --- Sections --- */
+section {
+  margin-bottom: 2.5rem;
+}
+
+/* --- Lists --- */
+ul, ol {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+/* --- Paragraphs --- */
+p {
+  margin-bottom: 1rem;
+}
+
+/* --- Utility: muted text --- */
+.muted {
+  color: #5a7a6a;
+}
+
+/* --- Utility: separator --- */
+hr {
+  border: none;
+  border-top: 1px solid #1a3a2a;
+  margin: 2rem 0;
+}
+
+/* --- Social links row --- */
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.social-links a {
+  text-decoration: none;
+  border-bottom: 1px dashed #1a3a2a;
+  padding-bottom: 0.1rem;
+}
+
+.social-links a:hover {
+  border-bottom-color: #f0c040;
+}
+
+/* --- Card-style item (for projects, writing entries) --- */
+.card {
+  border: 1px solid #1a3a2a;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  background: rgba(0, 255, 136, 0.03);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  border-color: #00ff88;
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card .card-meta {
+  font-size: 0.8rem;
+  color: #5a7a6a;
+}
+
+/* --- Latest post embed area --- */
+.latest-post {
+  border: 1px dashed #1a3a2a;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  min-height: 4rem;
+  background: rgba(0, 255, 136, 0.02);
+}
+
+.latest-post .placeholder {
+  color: #5a7a6a;
+  font-style: italic;
+}
+
+/* --- Footer --- */
+.site-footer {
+  border-top: 1px solid #1a3a2a;
+  padding-top: 1rem;
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  color: #5a7a6a;
+}
+
+/* ============================================
+   FLARE: Retro blinking cursor on h1
+   (exactly one flare active at a time)
+   ============================================ */
+.cursor-flare::after {
+  content: '\2588';          /* full-block character █ */
+  color: #00ff88;
+  text-shadow: 0 0 6px rgba(0, 255, 136, 0.5);
+  animation: blink 1s step-end infinite;
+  margin-left: 0.15em;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 1.25rem 1rem 3rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  .site-title {
+    font-size: 1.3rem;
+  }
+}
