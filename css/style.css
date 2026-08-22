@@ -204,6 +204,10 @@ hr {
   color: #5a7a6a;
 }
 
+.site-footer p {
+  margin-bottom: 0.2rem;
+}
+
 /* ============================================
    FLARE: Retro blinking cursor on h1
    (exactly one flare active at a time)
