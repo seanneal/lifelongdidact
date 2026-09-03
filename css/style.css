@@ -1,9 +1,23 @@
 /* ============================================
    lifelongdidact.com — style.css
-   Techno-minimalist / CRT hacker aesthetic
+   Warm paper, modern type, lots of air.
    ============================================ */
 
-/* --- Reset & Base --- */
+:root {
+  --paper: #F6F1E8;
+  --paper-raised: #FFFDF8;
+  --ink: #2C2416;
+  --muted: #6F6253;
+  --muted-soft: #8A7B68;
+  --accent: #C45C26;
+  --accent-hover: #9E4A1E;
+  --border: #DDD2C0;
+  --rule: #E6DCCB;
+  --sans: "Source Sans 3", "IBM Plex Sans", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: "Source Serif 4", "Source Serif Pro", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --mono: "JetBrains Mono", "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -11,108 +25,146 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 17px;
   scroll-behavior: smooth;
 }
 
 body {
-  background: #0a0e14;
-  color: #c0e8c0;
-  font-family: 'Courier New', Courier, monospace;
-  line-height: 1.7;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.65;
   min-height: 100vh;
-  -webkit-font-smoothing: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #E8C4A8;
+  color: var(--ink);
 }
 
 /* --- Layout --- */
 .wrapper {
-  max-width: 800px;
+  max-width: 40rem;
   margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
+  padding: 3rem 1.75rem 5rem;
 }
 
 /* --- Header --- */
 .site-header {
-  border-bottom: 1px solid #1a3a2a;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .site-title {
-  font-size: 1.6rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #00ff88;
-  text-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+  font-family: var(--sans);
+  font-size: 1.85rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.site-title.wordmark {
+  font-family: var(--mono);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 .site-tagline {
-  font-size: 0.9rem;
-  color: #7a9a8a;
-  margin-top: 0.25rem;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 0.55rem;
+  line-height: 1.5;
+  max-width: 36rem;
 }
 
 /* --- Navigation --- */
 nav {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.75rem;
   flex-wrap: wrap;
+  padding-left: 0;
+}
+
+nav li {
+  margin-bottom: 0;
 }
 
 nav a {
-  color: #c0e8c0;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--muted);
   text-decoration: none;
   padding: 0.15rem 0;
   border-bottom: 1px solid transparent;
-  transition: border-color 0.2s, color 0.2s;
+  transition: border-color 0.15s ease, color 0.15s ease;
 }
 
 nav a:hover {
-  color: #00ff88;
-  border-bottom-color: #00ff88;
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 nav a.active {
-  color: #f0c040;
-  border-bottom-color: #f0c040;
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 /* --- Headings --- */
 h1, h2, h3 {
-  font-weight: normal;
-  letter-spacing: 0.03em;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 h2 {
-  font-size: 1.25rem;
-  margin: 2rem 0 1rem;
-  text-transform: uppercase;
-  color: #f0c040;
+  font-family: var(--sans);
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin: 0 0 1rem;
+  color: var(--ink);
 }
 
 h3 {
-  font-size: 1rem;
-  margin: 1.5rem 0 0.75rem;
-  color: #00ff88;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.6rem;
+  color: var(--ink);
+  line-height: 1.3;
 }
 
 /* --- Links --- */
 a {
-  color: #00ff88;
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
 }
 
 a:hover {
-  color: #f0c040;
+  color: var(--accent-hover);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* --- Sections --- */
 section {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 /* --- Lists --- */
@@ -127,72 +179,94 @@ li {
 /* --- Paragraphs --- */
 p {
   margin-bottom: 1rem;
+  max-width: 65ch;
 }
 
 /* --- Utility: muted text --- */
 .muted {
-  color: #5a7a6a;
+  color: var(--muted);
 }
 
 /* --- Utility: separator --- */
 hr {
   border: none;
-  border-top: 1px solid #1a3a2a;
-  margin: 2rem 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.25rem 0;
 }
 
 /* --- Social links row --- */
 .social-links {
   display: flex;
   gap: 1.5rem;
-  margin: 1rem 0;
+  margin: 0.25rem 0 1.15rem;
 }
 
 .social-links a {
+  font-family: var(--sans);
+  font-weight: 400;
   text-decoration: none;
-  border-bottom: 1px dashed #1a3a2a;
+  border-bottom: 1px solid var(--border);
   padding-bottom: 0.1rem;
 }
 
 .social-links a:hover {
-  border-bottom-color: #f0c040;
+  border-bottom-color: var(--accent-hover);
 }
 
 /* --- Card-style item (for projects, writing entries) --- */
 .card {
-  border: 1px solid #1a3a2a;
-  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.35rem 1.5rem;
   margin-bottom: 1.25rem;
-  background: rgba(0, 255, 136, 0.03);
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-  border-color: #00ff88;
-  box-shadow: 0 0 12px rgba(0, 255, 136, 0.08);
+  background: var(--paper-raised);
 }
 
 .card h3 {
   margin-top: 0;
+  margin-bottom: 0.45rem;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
 }
 
 .card .card-meta {
-  font-size: 0.8rem;
-  color: #5a7a6a;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--muted-soft);
+  margin-bottom: 0.75rem;
+}
+
+.card a {
+  font-family: var(--sans);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
 }
 
 /* --- Latest post embed area --- */
 .latest-post {
-  border: 1px dashed #1a3a2a;
-  padding: 1rem 1.25rem;
-  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.15rem 1.25rem;
+  margin-bottom: 0.25rem;
   min-height: 4rem;
-  background: rgba(0, 255, 136, 0.02);
+  background: var(--paper-raised);
 }
 
 .latest-post .placeholder {
-  color: #5a7a6a;
+  font-family: var(--sans);
+  color: var(--muted);
   font-style: italic;
+}
+
+.latest-post .twitter-tweet {
+  margin: 0 auto;
 }
 
 /* --- Long-form essay --- */
@@ -201,71 +275,81 @@ hr {
 }
 
 .essay .essay-title {
-  text-transform: none;
-  color: #00ff88;
-  font-size: 1.35rem;
-  line-height: 1.35;
-  letter-spacing: 0.02em;
-  margin: 0 0 0.5rem;
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.65rem;
+  max-width: 22ch;
 }
 
 .essay .essay-byline {
-  font-size: 0.8rem;
-  color: #5a7a6a;
-  margin-bottom: 0.35rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted-soft);
+  margin-bottom: 0.3rem;
 }
 
 .essay .essay-note {
-  font-size: 0.85rem;
-  color: #7a9a8a;
-  margin-bottom: 1.75rem;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
 }
 
 .essay p {
-  margin-bottom: 1.15rem;
+  margin-bottom: 1.2rem;
+  max-width: 65ch;
+}
+
+.essay em {
+  font-style: italic;
 }
 
 /* --- Footer --- */
 .site-footer {
-  border-top: 1px solid #1a3a2a;
-  padding-top: 1rem;
-  margin-top: 3rem;
-  font-size: 0.8rem;
-  color: #5a7a6a;
+  font-family: var(--sans);
+  border-top: 1px solid var(--rule);
+  padding-top: 1.25rem;
+  margin-top: 3.5rem;
+  font-size: 0.82rem;
+  color: var(--muted-soft);
 }
 
 .site-footer p {
   margin-bottom: 0.2rem;
 }
 
-/* ============================================
-   FLARE: Retro blinking cursor on h1
-   (exactly one flare active at a time)
-   ============================================ */
-.cursor-flare::after {
-  content: '\2588';          /* full-block character █ */
-  color: #00ff88;
-  text-shadow: 0 0 6px rgba(0, 255, 136, 0.5);
-  animation: blink 1s step-end infinite;
-  margin-left: 0.15em;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0; }
-}
-
 /* --- Responsive --- */
 @media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+
   .wrapper {
-    padding: 1.25rem 1rem 3rem;
+    padding: 2rem 1.15rem 3.5rem;
   }
 
   nav ul {
-    gap: 1rem;
+    gap: 1.15rem;
   }
 
   .site-title {
-    font-size: 1.3rem;
+    font-size: 1.55rem;
+  }
+
+  .site-title.wordmark {
+    font-size: 1.05rem;
+  }
+
+  .essay .essay-title {
+    font-size: 1.4rem;
+    max-width: none;
+  }
+
+  .card {
+    padding: 1.15rem 1.15rem;
   }
 }
