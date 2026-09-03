@@ -195,6 +195,34 @@ hr {
   font-style: italic;
 }
 
+/* --- Long-form essay --- */
+.essay {
+  margin-bottom: 2.5rem;
+}
+
+.essay .essay-title {
+  text-transform: none;
+  color: #00ff88;
+  font-size: 1.35rem;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.5rem;
+}
+
+.essay .essay-byline {
+  margin-bottom: 0.35rem;
+}
+
+.essay .essay-note {
+  font-size: 0.85rem;
+  color: #7a9a8a;
+  margin-bottom: 1.75rem;
+}
+
+.essay p {
+  margin-bottom: 1.15rem;
+}
+
 /* --- Footer --- */
 .site-footer {
   border-top: 1px solid #1a3a2a;
