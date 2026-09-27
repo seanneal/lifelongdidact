@@ -14,7 +14,7 @@
 
     <header class="site-header">
       <h1 class="site-title">Projects</h1>
-      <p class="site-tagline">Things I'm building, and ideas I might never start.</p>
+      <p class="site-tagline">Things I'm building.</p>
     </header>
 
     <nav>
@@ -28,24 +28,15 @@
 
     <section>
       <h2>Active / Completed</h2>
-      <!-- Copy this card block for each project -->
       <div class="card">
-        <h3>[Project Name]</h3>
-        <p class="card-meta">[Status: Active | Completed] &middot; [Year]</p>
-        <p>[Two or three sentences about the project — what it is, who it's for, what problem it solves.]</p>
-        <p><a href="#" target="_blank" rel="noopener">Details &rarr;</a></p>
+        <h3>Silicon Miner</h3>
+        <p class="card-meta">Weekend project &middot; 2026</p>
+        <p>An educational Bitcoin SHA-256d miner for Apple Silicon (M1 Pro / ARM64). The hash path is pure ARM64 assembly, using the crypto extensions. C is only the harness, Stratum, and the rest around it.</p>
+        <p>The point was learning and correctness. It connects to testnet Stratum only.</p>
+        <p>On a MacBook Pro (MacBookPro18,3), the early one-thread midstate harness ran at about 20.7&nbsp;MH/s. With eight threads and dual-job, an offline soak later measured about 125&nbsp;MH/s, and a live testnet run about 100&nbsp;MH/s.</p>
+        <p>I wrote none of the code. I worked it out with Grok, by voice in the Tesla and with Grok Bot.</p>
+        <p><a href="https://github.com/seanneal/silicon-miner" target="_blank" rel="noopener">Source on GitHub &rarr;</a></p>
       </div>
-      <!-- /end card -->
-    </section>
-
-    <section>
-      <h2>One-Pagers (Ideas I May Never Start)</h2>
-      <!-- Copy this card block for each idea -->
-      <div class="card">
-        <h3>[Idea Title]</h3>
-        <p>[A short description of the concept. What would it be? Why does it interest you?]</p>
-      </div>
-      <!-- /end card -->
     </section>
 
     <footer class="site-footer">
